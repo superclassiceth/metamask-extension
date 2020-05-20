@@ -1852,7 +1852,7 @@ export default class MetamaskController extends EventEmitter {
   /**
    * A method for selecting a custom URL for an ethereum RPC provider and updating it
    * @param {string} rpcUrl - A URL for a valid Ethereum RPC API.
-   * @param {number} chainId - The chainId of the selected network.
+   * @param {string} chainId - The chainId of the selected network.
    * @param {string} ticker - The ticker symbol of the selected network.
    * @param {string} nickname - Optional nickname of the selected network.
    * @returns {Promise<String>} - The RPC Target URL confirmed.
@@ -1868,7 +1868,7 @@ export default class MetamaskController extends EventEmitter {
   /**
    * A method for selecting a custom URL for an ethereum RPC provider.
    * @param {string} rpcTarget - A URL for a valid Ethereum RPC API.
-   * @param {number} chainId - The chainId of the selected network.
+   * @param {string} chainId - The chainId of the selected network.
    * @param {string} ticker - The ticker symbol of the selected network.
    * @param {string} nickname - Optional nickname of the selected network.
    * @returns {Promise<String>} - The RPC Target URL confirmed.
