@@ -1,14 +1,14 @@
 import blacklist from './recipient-blacklist'
+import { MAINNET_NETWORK_ID } from '../../network/enums'
 
 /**
  * Checks if a specified account on a specified network is blacklisted
- * @param {number} networkId
+ * @param {string} networkId
  * @param {string} account
  * @throws {Error} if the account is blacklisted on mainnet
  */
 export function throwIfAccountIsBlacklisted (networkId, account) {
-  const mainnetId = 1
-  if (networkId !== mainnetId) {
+  if (networkId.toString() !== MAINNET_NETWORK_ID) {
     return
   }
 
