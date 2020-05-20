@@ -8,7 +8,7 @@ import { MAINNET_NETWORK_ID } from '../../network/enums'
  * @throws {Error} if the account is blacklisted on mainnet
  */
 export function throwIfAccountIsBlacklisted (networkId, account) {
-  if (networkId.toString() !== MAINNET_NETWORK_ID) {
+  if (networkId !== MAINNET_NETWORK_ID) {
     return
   }
 

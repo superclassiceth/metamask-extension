@@ -1454,7 +1454,7 @@ export function setPreviousProvider (type) {
 }
 
 export function updateAndSetCustomRpc (newRpc, chainId, ticker = 'ETH', nickname, rpcPrefs) {
-  const stringChainId = chainId.toString()
+  const stringChainId = chainId?.toString()
   return async (dispatch) => {
     log.debug(`background.updateAndSetCustomRpc: ${newRpc} ${stringChainId} ${ticker} ${nickname}`)
 
@@ -1474,7 +1474,7 @@ export function updateAndSetCustomRpc (newRpc, chainId, ticker = 'ETH', nickname
 }
 
 export function editRpc (oldRpc, newRpc, chainId, ticker = 'ETH', nickname, rpcPrefs) {
-  const stringChainId = chainId.toString()
+  const stringChainId = chainId?.toString()
   return async (dispatch) => {
     log.debug(`background.delRpcTarget: ${oldRpc}`)
     try {
@@ -1503,7 +1503,7 @@ export function editRpc (oldRpc, newRpc, chainId, ticker = 'ETH', nickname, rpcP
 }
 
 export function setRpcTarget (newRpc, chainId, ticker = 'ETH', nickname) {
-  const stringChainId = chainId !== null && chainId !== undefined ? chainId.toString() : undefined
+  const stringChainId = chainId?.toString()
   return async (dispatch) => {
     log.debug(`background.setRpcTarget: ${newRpc} ${stringChainId} ${ticker} ${nickname}`)
 
@@ -1561,7 +1561,7 @@ export function addToAddressBook (recipient, nickname = '', memo = '') {
  * @param {string} addressToRemove - Address of the entry to remove from the address book
  */
 export function removeFromAddressBook (chainId, addressToRemove) {
-  const stringChainId = chainId.toString()
+  const stringChainId = chainId?.toString()
   log.debug(`background.removeFromAddressBook`)
 
   return async () => {
