@@ -1,12 +1,14 @@
 import { connect } from 'react-redux'
-import { displayWarning, requestRevealSeedWords, fetchInfoToSync } from '../../store/actions'
+import { displayWarning, requestRevealSeedWords, fetchInfoToSync, exportAccount } from '../../store/actions'
 import MobileSyncPage from './mobile-sync.component'
+import { getMetaMaskKeyrings } from '../../selectors'
 
 const mapDispatchToProps = (dispatch) => {
   return {
     requestRevealSeedWords: (password) => dispatch(requestRevealSeedWords(password)),
     fetchInfoToSync: () => dispatch(fetchInfoToSync()),
     displayWarning: (message) => dispatch(displayWarning(message || null)),
+    exportAccount: (password, address) => dispatch(exportAccount(password, address)),
   }
 }
 
@@ -19,6 +21,7 @@ const mapStateToProps = (state) => {
 
   return {
     selectedAddress,
+    keyrings: getMetaMaskKeyrings(state),
   }
 }
 
